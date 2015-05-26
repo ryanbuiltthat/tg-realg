@@ -1,0 +1,21 @@
+<template name="userlayout">
+	<main>
+	    	{{> yield }}
+	<div class="drawer transparent z-depth-2">
+		<div class="drawer-action grey darken-3 white-text">
+			<a href="#modal3" class=" modal-trigger">
+				<i class="white-text small mdi-navigation-menu"></i>
+			</a>			
+		</div>
+		<div id="modal3" class="modal bottom-sheet transparent">
+          <div class="modal-content transparent">
+            {{>footer}}
+          </div>
+        </div>
+	</div>
+</main>
+  <div class="status-wrapper z-depth-1">
+  	<div class="status-icon"></div>
+  	<div class="status-text"></div>
+  </div>
+</template>

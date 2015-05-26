@@ -1,0 +1,63 @@
+<template name="home">
+	<div id="fp-wrapper">
+      {{> firstsection }}
+      {{# each guarantees }}
+        <div class="fpsection" id="{{ prettyId }}">
+		<figure 
+		data-anchor-target="#{{prettyId}} .row" 
+		data-bottom="background-position: 50% 50px;" 
+		data-center-bottom="background-position: 50% 20px;" 
+		data--400-top="background-position: 50% -100px;" 
+		style="background-image:url('{{ hero.url }}');">
+		</figure> 
+	  <div class="row white z-depth-3">
+	    <div class="col m1 hide-on-small-only">
+	      <img class="icon" src="{{ iconImage.url }}" width="256" height="256" />
+	    </div>
+	    <div class="col s12 m9 offset-m2">
+	          <!-- checkbox -->
+	          <form class="ac-custom ac-checkmark" autocomplete="off"><ul><li>
+	          <label for="chk{{ _id }}">
+	          <input id="chk{{ _id }}" name="chk{{ _id }}" type="checkbox" class="realcheck">
+	          {{#if currentUser }}
+	          {{else}}
+	          {{>checkmark}}
+	          {{/if}}
+	          </label>
+	          </li></ul></form>
+	          <!-- /checkbox -->
+	        <h2 class="header indigo-text text-darken-4">{{ title }}</h2>
+	        <h4 class="dek grey-text text-darken-3 lighten-3">{{ dek }}</h4>
+	    </div>
+	    <div class="col s12">
+			<ul class="collapsible" data-collapsible="accordion">
+	          <li>
+	            <div class="collapsible-header"><i class="mdi-editor-wrap-text"></i>Full Text</div>
+	            <div class="collapsible-body">
+	            {{{ body }}}
+	            </div>
+	          </li>
+	        </ul>
+	    </div>
+	    <a href="#" class="btn-large btn-floating btn-small waves-effect waves-light waves-circle white scroll-arrow">
+		<i class="fa fa-chevron-down blue-text text-darken-4"></i>
+		</a>
+	  </div>
+	</div>
+      {{/ each }}
+      {{>pledgesection}}
+	</div>
+	{{#if currentUser }}
+		{{>actionbutton}}
+	   <!-- Modal Structure -->
+	  <div id="receiptBuildForm" class="modal modal-fixed-footer">
+	    <div class="modal-content">
+	      <h3>Create Real Guarantee Receipt</h3>
+	      {{>receiptbuilder}}
+	    </div>
+	    <div class="modal-footer">
+	      <a href="#!" class="modal-action modal-close waves-effect waves-blue white indigo-text text-darken-4 btn-flat ">Close</a>
+	    </div>
+	  </div>
+	{{/if}}
+</template>

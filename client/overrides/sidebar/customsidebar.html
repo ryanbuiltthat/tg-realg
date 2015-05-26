@@ -1,0 +1,36 @@
+<template name="customSidebar">
+	<header>
+    <div class="container button-collapse-container">
+      <a href="#" data-activates="nav-mobile" class="button-collapse grey-text text-darken-3">
+        <h4>
+          <i class="mdi-navigation-menu"></i>
+        </h4>
+      </a>
+    </div>
+    <ul id="nav-mobile" class="side-nav fixed">
+      <li class="sidebar-brand no-padding">
+          <!-- <a href="{{ options 'homePath' '/' }}" class="waves-effect">
+              {{ options 'siteName' 'Admin' }}
+          </a> -->
+          <a href="{{ pathFor 'admin' }}">
+          	<img src="../img/thorntonandgrooms.png" alt="Thornton &amp; Grooms Real Guarantees" class="sidebar-logo" style="width: 100%;max-width: 100%;display: block;margin: 2rem auto;" />
+          </a>
+          <h4 class="page-title">Administration</h4>
+      </li>
+      {{# each links 'top' }}
+        {{> orionMaterializeSidebarLink }}
+      {{/ each }}
+      {{# each links 'medium' }}
+        {{> orionMaterializeSidebarLink }}
+      {{/ each }}
+      {{# each links 'bottom' }}
+        {{> orionMaterializeSidebarLink }}
+      {{/ each }}
+    </ul>
+  </header>
+</template>
+<template name="customSidebarLink">
+  <li class="{{ isActiveRoute regex=activeRouteRegex }} no-padding">
+    <a href="{{ pathFor routeName }}" class="waves-effect {{customClass}} ">{{ title }}</a>
+  </li>
+</template>

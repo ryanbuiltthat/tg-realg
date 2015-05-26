@@ -1,0 +1,22 @@
+<template name="firstsection">
+	<div class="fpsection banner" id="banner-container">
+		<figure style="background-image:url('img/a1.jpg');"></figure>
+		<div class="banner-wrapper flex">
+			<div class="banner-col left">
+				<img src="img/thornton-and-grooms-real-guarantees.png" alt="Thornton &amp; Grooms Real Guarantees" class="logo" />
+				<h1>{{ dict 'site.homePriHeading' 'No Primary Heading - You can specify one in the admin' }}</h1>
+		        <h2>{{ dict 'site.homeSecHeading' 'No Secondar Heading - You can specify one in the admin' }}</h2>
+	    	</div>
+	    	<div class="banner-col right">
+<video width="100%" controls class="responsive-video" poster="{{ dict 'site.videoBanner.url' }}">
+<source src="https://s3.amazonaws.com/tandgrealguarantees/orionjs/ThorntonandGroomsRealGuarantee-HD.mp4" type='video/mp4' />
+<source src="https://s3.amazonaws.com/tandgrealguarantees/orionjs/ThorntonandGroomsRealGuarantee.webm" type='video/webm' />
+
+</video>
+	    	</div>
+	    	<a href="#" class="btn-large btn-floating btn-small waves-effect waves-blue waves-circle white scroll-arrow">
+	    		<i class="fa fa-chevron-down blue-text text-darken-4"></i>
+	    	</a>
+    	</div>
+	</div>
+</template>

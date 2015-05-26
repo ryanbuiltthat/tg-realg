@@ -1,0 +1,20 @@
+<template name="pledgesection">
+	<div class="fpsection pledge blue-grey lighten-5" id="pledge">
+		<div class="row white">
+			<h2 class="section-header-main header-class blue-text text-darken-4" style="width:100%;text-align:center;">
+				{{ dict 'pledge.title' 'no pledge title defined'}}
+			</h2>
+			<h4 class="section-header-sub" style="width:100%;text-align:center;">
+				{{ dict 'pledge.subtitle' 'no subtitle defined' }}
+			</h4>
+			<form class="ac-custom ac-checkbox ac-checkmark" autocomplete="off">
+			  <ul>
+			  	{{#each pledges }}
+			  		{{>pledge}}
+			  	{{/each}}
+			  </ul>
+			</form>
+			{{{pledgetext}}}
+	    </div>
+	</div><!-- /.fpsection -->
+</template>

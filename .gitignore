@@ -5,6 +5,14 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
+# Sensitive stuff
+server/startup.js
+server/kadira.js
+
+# Sublime files
+*.sublime-project
+*.sublime-workspace
+
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 

@@ -1,0 +1,59 @@
+<template name="customAccounts">
+  {{# Layout template="orionMaterializeContentContainer" }}
+    {{# Layout template="orionMaterializeHeaderContainer" }}
+      Accounts
+    {{/ Layout }}
+    <table class="table hoverable responsive-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Roles</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{# each users }}
+          <tr>
+            <td>
+              <ul id="ul{{ _id }}" class="user-action dropdown-content">
+                {{#each buttons}}
+                  <li><a href="#" data-action="{{action}}" class="tooltipped user-mini-action" data-position="top" data-tooltip="{{title}}" data-user="{{../_id}}">
+                    <i class="small {{icon}} {{customClass}} "></i></a>
+                  </li>
+                {{/each}}
+              </ul>
+              
+              <a href="#!" class="user-dropdown-btn left" data-activates="ul{{ _id }}"><i class="mdi-navigation-more-vert"></i></a><b>{{ profile.name }}</b>
+            </td>
+            <td>
+              {{# each emails }}
+                {{ address }}
+              {{/ each }}
+            </td>
+            <td>
+              {{# each roles }}
+                <span class="label label-danger">{{ this }}</span>
+              {{/ each }}
+            </td>
+          </tr>
+        {{/ each }}
+      </tbody>
+    </table>
+    <div id="userActionModal" class="modal">
+      <div class="modal-content center-align">
+        <i class="left prefix small "></i>
+        <h4></h4>
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-custom-action waves-effect waves-green btn-flat"></a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+      </div>
+    </div>
+  {{/ Layout }}
+  {{# Layout template="orionMaterializeButtonsContainer" }}
+    {{# if userHasPermission 'accounts.invite' }}
+      <a href="{{ pathFor 'accounts.invite' }}" >Invite</a>
+    {{/ if }}
+  {{/ Layout }}
+</template>

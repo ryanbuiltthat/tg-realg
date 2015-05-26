@@ -1,0 +1,37 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+orionjs:core
+meteorhacks:ssr
+msavin:mongol
+lawshe:full-page
+tsega:skrollr
+materialize:materialize
+meteorhacks:unblock
+useraccounts:materialize
+nicolaslopezj:tabular-materialize
+gildaspk:autoform-materialize
+msavin:jetsetter
+orionjs:file-attribute
+orionjs:filesystem
+orionjs:relationships
+orionjs:materialize
+email
+meteorhacks:fast-render
+orionjs:s3
+orionjs:froala
+meteorhacks:kadira@2.21.0
+aldeed:template-extension
+less
+mdg:geolocation
+iron:location
+nicolaslopezj:orion-ga
+insecure
+dburles:collection-helpers
+momentjs:moment
+classcraft:meteor-wkhtmltopdf
+accounts-ui
